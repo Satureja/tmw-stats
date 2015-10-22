@@ -96,6 +96,9 @@ ST.reset = ->
   map.call(ST.el, (p) ->
     p.value = parseInt(1)
   )
+  map.call(ST.rn, (p) ->
+    p.value = parseInt(1)
+  )
   ST.lvl.value = parseInt(1)
   ST.calc()
   return
