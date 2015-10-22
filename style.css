@@ -1,0 +1,98 @@
+body
+{
+    margin:0;
+    padding:0;
+    background: #eee;
+    background: repeating-linear-gradient(90deg,#c0c0c0,#c0c0c0 30px,#c8c8c8 30px,#c8c8c8 50px);
+    font-family: "Roboto Mono", "Droid Sans Mono", "Consolas", "DejaVu Sans Mono", "Lucida Console", "Monaco", "Ubuntu Mono", "Andale Mono", "Courier";
+}
+
+#container
+{
+    margin: 1rem;
+    padding: 1rem;
+    max-width: 200px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.4);
+}
+
+#container>div, #container.not-supported>table
+{
+    display:none;
+}
+
+#container.not-supported>div
+{
+    display:block;
+}
+
+table
+{
+    border-collapse: collapse;
+}
+
+tbody>tr:last-of-type>td, tbody>tr:first-of-type>td
+{
+    padding-bottom:10px
+}
+
+tfoot>tr#points>td, tbody>tr#str>*
+{
+    border-top: double 3px #fff;
+}
+
+tbody>tr>td, tfoot>tr>td:nth-of-type(2)
+{
+    text-align: right!important;
+    vertical-align: top;
+}
+
+tbody input
+{
+    width: 100px;
+}
+
+label
+{
+    cursor:pointer;
+}
+
+th
+{
+    width: 40px;
+    text-align: left;
+    font-weight: normal;
+    text-transform: uppercase;
+    vertical-align: top;
+}
+
+
+@media (min-width: 858px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 780px) {
+    html {
+        font-size: 17px;
+    }
+}
+
+@media (min-width: 702px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 724px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 623px) {
+    html {
+        font-size: 14px;
+    }
+}

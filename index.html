@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>TMW Stats Calculator</title>
+        <meta name="description" content="Stats calculator for The Mana World">
+        <meta name="keywords" content="stats,calculator,themanaworld,manaworld,mana,world">
+        <meta name="humans" content="gumi,travolta">
+        <meta name="robots" content="nofollow">
+        <link rel="canonical" href="index.html" >
+        <link rel="source" href="https://github.com/mekolat/tmw-stats" >
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+        <link href="style.css" media="all" rel="stylesheet"/>
+        <script async src="script.js"></script>
+        <!-- ready for Content-Security-Policy -->
+    </head>
+    <body>
+        <div id="container">
+            <table>
+                <tbody>
+                    <tr id="lvl">
+                        <th>lvl</th>
+                        <td><input type="number" min="1" max="255" value="1" required/></td>
+                    </tr>
+                    <tr id="str">
+                        <th>str</th>
+                        <td><input type="number" min="1" max="99" value="1" required/></td>
+                    </tr>
+                    <tr id="agi">
+                        <th>agi</th>
+                        <td><input type="number" min="1" max="99" value="1" required/></td>
+                    </tr>
+                    <tr id="vit">
+                        <th>vit</th>
+                        <td><input type="number" min="1" max="99" value="1" required/></td>
+                    </tr>
+                    <tr id="int">
+                        <th>int</th>
+                        <td><input type="number" min="1" max="99" value="1" required/></td>
+                    </tr>
+                    <tr id="dex">
+                        <th>dex</th>
+                        <td><input type="number" min="1" max="99" value="1" required/></td>
+                    </tr>
+                    <tr id="luk">
+                        <th>luk</th>
+                        <td><input type="number" min="1" max="99" value="1" required/></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr id="points"><td>Points</td><td>-</td></tr>
+                    <tr id="spent"><td>Spent</td><td>-</td></tr>
+                    <tr id="remaining"><td>Ramaining</td><td>-</td></tr>
+                </tfoot>
+            </table>
+            <div>
+                <h1>Not supported!</h1>
+                <p>Your browser does not support LocalStorage.</p>
+            </div>
+        </div>
+    </body>
+</html>
