@@ -109,5 +109,6 @@ map.call $$('tbody input'), (e) ->
   e.addEventListener 'input', ST.calc
   return
 $('tfoot>#buttons>td>button:first-of-type').addEventListener 'click', ST.copy
+$('#copy').addEventListener 'click', ST.copy
 $('tfoot>#buttons>td>button:last-of-type').addEventListener 'click', ST.reset
 ST.calc()
