@@ -24,7 +24,7 @@ while 256 > i
   ST.stat_p[i] = ST.stat_p[i - 1] + Math.floor((i - 2) / 4) + 4
   i++
 w = 9
-while 100 > w
+while 101 > w
   ST.arc[w] = Math.floor((w - 2) / 10) + 2
   w++
 
@@ -66,9 +66,14 @@ ST.calc = (p) ->
     while parseInt(e.value) > y
       spent += ST.arc[y + 1]
       y++
+    e.parentNode.parentNode.children[3].innerHTML = "+" + ST.arc[parseInt(e.value)+1]
     return
+  remaining = ST.stat_p[LS.lvl] - spent
   ST.spent.innerHTML = spent
-  ST.remaining.innerHTML = ST.stat_p[LS.lvl] - spent
+  ST.remaining.innerHTML = remaining
+  ST.remaining.className = ""
+  if (remaining < 0)
+    ST.remaining.className =  "err"
   return
 
 ST.load()
