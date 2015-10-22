@@ -22,15 +22,17 @@ body {
     background: repeating-linear-gradient(90deg,$silver,$silver 30px,$color_pumice_approx 30px,$color_pumice_approx 50px);
     font-family: "Roboto Mono", "Droid Sans Mono", "Consolas", "DejaVu Sans Mono", "Lucida Console", "Monaco", "Ubuntu Mono", "Andale Mono", "Courier";
 }
-/*#copy {
-    opacity:0!important;
-    width:1px;
-    height:1px;
-    overflow:hidden;
-    cursor:default;
-    margin:0;
-    border:0;
-}*/
+#copy {
+    margin: 1rem;
+    padding: 1rem;
+    max-width: 270px;
+    overflow: hidden;
+    background: $white_40;
+    display: none;
+    &.v {
+        display: block;
+    }
+}
 #container {
     margin: 1rem;
     padding: 1rem;

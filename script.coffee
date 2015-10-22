@@ -83,6 +83,7 @@ ST.copy = (b) ->
     if (p != ST.el[ST.el.length - 1])
       str += ", "
   )
+  $("#copy").className = "v"
   $("#copy").innerHTML = str
   selection = window.getSelection()
   range = document.createRange()
