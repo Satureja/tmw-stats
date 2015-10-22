@@ -68,6 +68,12 @@ layout: compress
                     <tr id="points"><td colspan="2">Points</td><td>-</td><td></td></tr>
                     <tr id="spent"><td colspan="2">Spent</td><td>-</td><td></td></tr>
                     <tr id="remaining"><td colspan="2">Remaining</td><td>-</td><td></td></tr>
+                    <tr id="buttons">
+                        <td colspan="4">
+                            <button>Copy</button>
+                            <button>Reset</button>
+                        </td>
+                    </tr>
                 </tfoot>
             </table>
             <div>
@@ -75,5 +81,6 @@ layout: compress
                 <p>Your browser does not support LocalStorage.</p>
             </div>
         </div>
+        <div id="copy" contenteditable="true">clipboard</div>
     </body>
 </html>

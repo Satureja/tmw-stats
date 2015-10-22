@@ -76,8 +76,34 @@ ST.calc = (p) ->
     ST.remaining.className =  "err"
   return
 
+ST.copy = (b) ->
+  str = ""
+  map.call(ST.el, (p) ->
+    str += p.parentNode.parentNode.children[0].innerHTML + ": " + p.value
+    if (p != ST.el[ST.el.length - 1])
+      str += ", "
+  )
+  $("#copy").innerHTML = str
+  selection = window.getSelection()
+  range = document.createRange()
+  range.selectNodeContents($("#copy"))
+  selection.removeAllRanges()
+  selection.addRange(range)
+  document.execCommand("copy", false, null)
+  return
+
+ST.reset = ->
+  map.call(ST.el, (p) ->
+    p.value = parseInt(1)
+  )
+  ST.lvl.value = parseInt(1)
+  ST.calc()
+  return
+
 ST.load()
 map.call $$('tbody input'), (e) ->
   e.addEventListener 'input', ST.calc
   return
+$('tfoot>#buttons>td>button:first-of-type').addEventListener 'click', ST.copy
+$('tfoot>#buttons>td>button:last-of-type').addEventListener 'click', ST.reset
 ST.calc()
