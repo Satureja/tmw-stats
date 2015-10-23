@@ -6,6 +6,7 @@
 $ = document.querySelector.bind document
 $$ = document.querySelectorAll.bind document
 LS = window.localStorage
+nz = (x) => if x? and parseInt(x) > 0 then parseInt x else 1
 map = Array::map
 if typeof LS == 'undefined'
     document.getElementById('container').className = 'not-supported'
@@ -47,16 +48,16 @@ ST.load = ->
 ST.calc = (p) ->
     if p
         if p.target.type == 'range' and parseInt(p.target.max) == 99
-            p.target.parentNode.parentNode.children[2].children[0].value = parseInt p.target.value
+            p.target.parentNode.parentNode.children[2].children[0].value = nz p.target.value
         else if p.target.type == 'number' and parseInt(p.target.max) == 99
-            p.target.parentNode.parentNode.children[1].children[0].value = parseInt p.target.value
+            p.target.parentNode.parentNode.children[1].children[0].value = nz p.target.value
     spent = 0
     LS.el = map.call ST.el, (e) ->
         parseInt e.value
-    LS.lvl = if parseInt(ST.lvl.value) > 0 then parseInt ST.lvl.value else 1
+    LS.lvl = nz ST.lvl.value
     ST.points.innerHTML = ST.stat_p[LS.lvl]
     map.call ST.el, (e) ->
-        val = if parseInt(e.value) > 0 then parseInt e.value else 1
+        val = nz e.value
         spent += ST.arc[y+1] for y in [1...val]
         e.parentNode.parentNode.children[3].innerHTML = "+#{ST.arc[val+1]}"
         return
