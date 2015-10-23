@@ -1,5 +1,6 @@
 ---
 layout: compress
+iterator: 1
 stats:
   - str
   - agi
@@ -30,14 +31,16 @@ stats:
                 <tbody>
                     <tr id="lvl">
                         <th>lvl</th>
-                        <td colspan="2"><input type="number" min="1" max="255" value="1" required/></td>
+                        <td colspan="2"><input type="number" min="1" max="255" value="1" required tabindex="1"/></td>
                         <td></td>
                     </tr>
+                    {% assign iterator = 1 %}
                     {% for stat in page.stats %}
+                    {% capture iterator %}{{ iterator | plus:1 }}{% endcapture %}
                     <tr id="{{ stat }}">
                         <th>{{ stat }}</th>
                         <td><input type="range" min="1" max="99" value="1" required/></td>
-                        <td><input type="number" min="1" max="99" value="1" required/></td>
+                        <td><input type="number" min="1" max="99" value="1" required tabindex="{{ iterator }}"/></td>
                         <td></td>
                     </tr>
                     {% endfor %}
