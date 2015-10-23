@@ -42,8 +42,16 @@ body {
     > div {
         display: none;
     }
+    &.profiles {
+        > table:last-of-type {
+            display: none;
+        }
+        > table:first-of-type {
+            display: table!important;
+        }
+    }
     &.not-supported {
-        > table {
+        > table:last-of-type {
             display: none;
         }
         > div {
@@ -51,66 +59,96 @@ body {
         }
     }
 }
-table {
+table:first-of-type {
+    display: none;
     border-collapse: collapse;
-}
-tbody {
-    > tr {
-        > td {
-            text-align: right!important;
-            vertical-align: top;
-            &:nth-of-type(3){
-                width: 20px;
-                text-align: left!important;
-                color: #888;
-                font-size: 80%;
-            }
+    th {
+        background: #888;
+        border: solid 1px #888;
+        width: 40px;
+        color: #fff;
+    }
+    &:hover {
+        th {
+            cursor: pointer;
         }
-        &:last-of-type > td {
-            padding-bottom: 10px;
-        }
-        &:first-of-type > td {
-            padding-bottom: 10px;
-        }
-        &#str > * {
-            border-top: double 3px $white;
+        td {
+            background: orange;
+            cursor: pointer;
         }
     }
-    input[type=number] {
+    td {
+        border: solid 1px #888;
+        border-left: none;
+        padding: 4px;
+        width: 210px;
+        &:nth-child(1) {
+            border-top: none;
+        }
+        &:nth-child(2) {
+            border-bottom: none;
+        }
+    }
+}
+table:last-of-type {
+    border-collapse: collapse;
+    tbody {
+        > tr {
+            > td {
+                text-align: right!important;
+                vertical-align: top;
+                &:nth-of-type(3){
+                    width: 20px;
+                    text-align: left!important;
+                    color: #888;
+                    font-size: 80%;
+                }
+            }
+            &:last-of-type > td {
+                padding-bottom: 10px;
+            }
+            &:first-of-type > td {
+                padding-bottom: 10px;
+            }
+            &#str > * {
+                border-top: double 3px $white;
+            }
+        }
+        input[type=number] {
+            width: 40px;
+        }
+    }
+    th {
         width: 40px;
+        text-align: left;
+        font-weight: normal;
+        text-transform: uppercase;
+        vertical-align: top;
+    }
+    tfoot > tr {
+        &#points > td {
+            border-top: double 3px $white;
+        }
+        &#remaining > td.err:nth-of-type(2) {
+            color: red;
+            font-weight: bold;
+        }
+        &#buttons {
+            text-align: center!important;
+            button {
+                margin: 20px 3px 0px 3px;
+                width: 60px;
+                height: 30px;
+            }
+        }
+        > td:nth-of-type(2) {
+            text-align: right!important;
+            vertical-align: top;
+        }
     }
 }
 label {
     cursor: pointer;
-}
-th {
-    width: 40px;
-    text-align: left;
-    font-weight: normal;
-    text-transform: uppercase;
-    vertical-align: top;
-}
-tfoot > tr {
-    &#points > td {
-        border-top: double 3px $white;
-    }
-    &#remaining > td.err:nth-of-type(2) {
-        color: red;
-        font-weight: bold;
-    }
-    &#buttons {
-        text-align: center!important;
-        button {
-            margin: 15px;
-            margin-bottom: 0;
-            width: 60px;
-            height: 30px;
-        }
-    }
-    > td:nth-of-type(2) {
-        text-align: right!important;
-        vertical-align: top;
-    }
 }
 
 input[type=range] {

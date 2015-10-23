@@ -14,6 +14,7 @@ stats:
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; img-src 'self'; style-src 'self';">
         <title>TMW Stats Calculator</title>
         <meta name="description" content="Stats calculator for The Mana World">
         <meta name="keywords" content="stats,calculator,themanaworld,manaworld,mana,world">
@@ -27,6 +28,17 @@ stats:
     </head>
     <body>
         <div id="container">
+            <table>
+                <template id="profile">
+                    <tr>
+                        <th rowspan="2">LVL</th>
+                        <td>name</td>
+                    </tr>
+                    <tr>
+                        <td>stats</td>
+                    </tr>
+                </template>
+            </table>
             <table>
                 <tbody>
                     <tr id="lvl">
@@ -51,6 +63,7 @@ stats:
                     <tr id="remaining"><td colspan="2">Remaining</td><td>-</td><td></td></tr>
                     <tr id="buttons">
                         <td colspan="4">
+                            <button>Profile</button>
                             <button>Copy</button>
                             <button>Reset</button>
                         </td>
